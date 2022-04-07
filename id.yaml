@@ -160,7 +160,7 @@ manage:
 
       ⚠️ Bot hanya dapat bekerja dalam satu grup pada satu waktu. Anda dapat menambahkan beberapa bot yang berbeda ke grup yang sama.
 
-      Grup anda: {%if bot.group%}{%if bot.group.link%}<a href="{{bot.group.link}}">{{bot.group.title|escape}}</a>{%else%}{{bot.group.title|escape}}{%endif%}{%else%}<i>Not set</i>{%endif%}
+      Grup anda: {%if bot.group%}{%if bot.group.link%}<a href="{{bot.group.link}}">{{bot.group.title|escape}}</a>{%else%}{{bot.group.title|escape}}{%endif%}{%else%}<i>Tidak diatur</i>{%endif%}
     leave: |
       🚶 Nonaktifkan & tinggalkan
     leaved: |
