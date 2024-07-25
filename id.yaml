@@ -10,7 +10,7 @@ welcome: |
   
   /language - Ubah bahasa.
   
-  Your id is: <code>{{owner._id}}</code>.
+  ID Anda adalah: <code>{{owner._id}}</code>.
   
   Untuk dukungan teknis, serta untuk melihat cara kerjanya secara langsung, silakan hubungi @RocketBotsBot.
   
@@ -21,7 +21,7 @@ common:
     new: |
       🆕 Baru
     refresh: |
-      🔄 Refresh
+      🔄 Segarkan
     addbtns: |
       ⌨ Tambah keyboard
     delbtns: |
@@ -88,7 +88,7 @@ mybots:
   nobots: |
     🔹 Anda tidak memiliki bot sama sekali.
     
-    To add a new team use /newbot.
+    Untuk menambahkan tim baru, gunakan /newbot.
   bot: |
     {%if bot.active%}🎾{%else%}🏐️{%endif%} {{bot.username}}
 
@@ -126,8 +126,8 @@ manage:
     Dibuat: {{bot.created|elapsed}}
     Bahasa: {{bot.language}}
         
-    Paid till: {{bot.paid_till.strftime('%Y-%m-%d')}}
-    For payment please call @RocketBotsBot
+    Dibayar hingga: {{bot.paid_till.strftime('%Y-%m-%d')}}
+    Untuk pembayaran, silakan hubungi @RocketBotsBot
     
     Pengguna: {{bot.users_count}}
     
@@ -197,13 +197,13 @@ manage:
       voice: |
         {%if 'voice' in bot.types%}✅{%else%}❌{%endif%} 🎧 Pesan suara
       video_note: |
-        {%if 'video_note' in bot.types%}✅{%else%}❌{%endif%} 🤳 Videonotes
+        {%if 'video_note' in bot.types%}✅{%else%}❌{%endif%} 🤳 Videonote
       contact: |
         {%if 'contact' in bot.types%}✅{%else%}❌{%endif%} 📇 Kontak
       location: |
         {%if 'location' in bot.types%}✅{%else%}❌{%endif%} 🛰️ Lokasi
       venue: |
-        {%if 'venue' in bot.types%}✅{%else%}❌{%endif%} 🏬 Venues
+        {%if 'venue' in bot.types%}✅{%else%}❌{%endif%} 🏬 Tempat
       links: |
         {%if bot.allow_links%}✅{%else%}❌{%endif%} 🔗 Links
       forwards: |
@@ -257,7 +257,7 @@ manage:
     text: |
       🔸 Hapus @{{bot.username}} dari sistem?
       
-      ⚠️ <b>Perhatian!</b> Ini akan menghapus pengaturan, statistik log, dan semua data yang terkait dengan bot!
+      ⚠️ <b>Perhatian!</b> Ini akan menghapus pengaturan, log statistik, dan semua data yang terkait dengan bot!
       
       ⚠️ <b>Perhatian!</b> Aksi ini tidak dapat dibatalkan.
       {%if step=='two'%}
@@ -269,7 +269,7 @@ manage:
       "2": Ya, saya yakin!
     negatives:
       "1": Tidak!
-      "2": Fuck tidak!
+      "2": Persetan, tidak!
       "3": Tidak akan!
       "4": Saya berubah pikiran!
       "5": Lain kali!
@@ -278,43 +278,43 @@ manage:
       "8": Ini sebuah kesalahan!
   transfer:
     btn: |
-      ⏩️ Transfer
+      ⏩️ Pindah
     text: |
-      🔸 Transfer @{{bot.username}}.
+      🔸 Pindah @{{bot.username}}.
       {%if new_owner%}
-      <b>The bot will be transferred to <code>{{new_owner._id}}</code>!</b>
+      <b>Bot akan dipindahkan ke <code>{{new_owner._id}}</code>!</b>
       {%endif%}
-      ⚠️ <b>Attention!</b> The bot will be transferred to another account!
-
-      ⚠️ <b>Attention!</b> This action cannot be undone!
+      ⚠️ <b>Perhatian!</b> Bot akan ditransfer ke akun lain!
+      
+      ⚠️ <b>Perhatian!</b> Tindakan ini tidak dapat diurungkan!
       {%if step=='zero'%}
-      To cancel transferring click /cancel.
+      Untuk membatalkan transfer, klik /batal.
       
-      ❓ Id can be viewed by <code>/start</code> command. The new owner must give you their id.
+      ❓ ID dapat dilihat dari perintah <code>/start</code>. Pemilik baru harus memberikan ID mereka kepada Anda.
       
-      <b>Please enter the id of the user to transfer the bot to:</b>{%endif%}
+      <b>Masukkan id pengguna yang akan ditransfer bot:</b>{%endif%}
       {%if step=='two'%}
-      <b>📛📛📛 Are you really sure?!</b>{%endif%}
+      <b>📛📛📛 Apa Anda benar-benar yakin?!</b>{%endif%}
     wrong: |
-      🔸 Wrong user id.
+      🔸 User ID salah.
       
-      To cancel transferring click /cancel.
+      Untuk membatalkan transfer, klik /batal.
 
-      <b>Please enter id of the user to transfer the bot to:</b>
+      <b>Masukkan id pengguna yang akan ditransfer bot:</b>
     proceed: |
-      ⏩️ Proceed transfer..
+      ⏩️ Memproses pemindahan...
     write: |
-      🔸 <b>The new owner have to write to this bot first!</b>
+      🔸 <b>Pemilik baru harus menulis ke bot ini terlebih dahulu!</b>
     transferred: |
-      🔸 @{{bot.username}} is transferred to {%if mew_owner%}<code>{{mew_owner._id}}</code>{%else%}you{%endif%}!
+      🔸 @{{bot.username}} telah dipindahkan ke {%if mew_owner%}<code>{{mew_owner._id}}</code>{%else%}you{%endif%}!
   auth: |
     ‼️ Bot anda @{{bot.username}} telah dihentikan karena ototorisasi gagal.
     
-    Untuk melanjutkan pekerjaan, Anda harus memperbarui api-key bot.
+    Untuk melanjutkan pekerjaan, Anda harus memperbarui token bot.
   subscription: |
-    ‼️‼️ Your subscription for bot @{{bot.username}} has expired.
+    ‼️‼️ Langganan Anda untuk bot @{{bot.username}} telah kadaluarsa.
     
-    Please contact @RocketBotsBot to renew it.
+    Silakan hubungi @RocketBotsBot untuk memperbaruinya.
 
 
 group:
@@ -323,9 +323,9 @@ group:
     
     Untuk mengotorisasi saya dalam grup ini, pemilik bot harus menjalankan perintah /authorize@{{bot.username}}.
   supergroup: |
-    🔹 ⚠️ This bot is not intended for use in regular group!
+    🔹 ⚠️ Bot ini tidak dimaksudkan untuk digunakan dalam grup biasa!
 
-    Convert the group to a supergroup to use the bot.
+    Ubah grup menjadi supergrup untuk menggunakan bot.
   auth:
     ok: |
       🔹 Bot diotorisasi. Sekarang pesan akan datang ke grup ini.
@@ -390,7 +390,7 @@ member:
     
     {%if user.is_banned%}<b>⚠️ Diblokir!</b>{%endif%}
   ban: |
-    🔹 User is {% if user.is_banned%}⚠️ blokir{%else%}telah di buka blokir{%endif%}!
+    🔹 Pengguna {% if user.is_banned%} di ⚠️ blokir{%else%} telah di buka blokir{%endif%}!
   digest: |
     🔹 Digest for {{user.user_id|er}} <a href="tg://user?id={{user.user_id}}">&{{user.user_id}}</a> {{user.first_name | escape}}{%if user.last_name%} {{user.last_name | escape}}{%endif%}:
     {%for msg in msgs%}
@@ -419,7 +419,7 @@ user:
   forward: |
     🔹 ⚠️ Dilarang untuk meneruskan pesan di sini.
   links: |
-    🔹 ⚠️ Forbid to send messages with links here.
+    🔹 ⚠️ Dilarang mengirim pesan dengan tautan di sini.
   type: |
     🔹 ⚠️ Pesan tidak terkirim
     
@@ -429,16 +429,16 @@ user:
   types: |
     {%if 'text' in bot.types%}📝 Text{{'\n'}}{%endif-%}
     {%if 'audio' in bot.types%}💽 Audio{{'\n'}}{%endif-%}
-    {%if 'document' in bot.types%}📃 Documen{{'\n'}}{%endif-%}
+    {%if 'document' in bot.types%}📃 Dokumen{{'\n'}}{%endif-%}
     {%if 'animation' in bot.types%}🐈 GIF{{'\n'}}{%endif-%}
     {%if 'photo' in bot.types%}🖼️ Foto{{'\n'}}{%endif-%}
     {%if 'sticker' in bot.types%}❤️ Stiker{{'\n'}}{%endif-%}
     {%if 'video' in bot.types%}📺 Video{{'\n'}}{%endif-%}
     {%if 'voice' in bot.types%}🎧 Pesan suara{{'\n'}}{%endif-%}
-    {%if 'video_note' in bot.types%}🤳 Videonotes{{'\n'}}{%endif-%}
+    {%if 'video_note' in bot.types%}🤳 Videonote{{'\n'}}{%endif-%}
     {%if 'contact' in bot.types%}📇 Kontak{{'\n'}}{%endif-%}
     {%if 'location' in bot.types%}🛰️ Lokasi{{'\n'}}{%endif-%}
-    {%if 'venue' in bot.types%}🏬 Venues{%endif-%}
+    {%if 'venue' in bot.types%}🏬 Tempat{%endif-%}
 
 messages:
   text: |
@@ -534,7 +534,7 @@ broadcast:
     <b>{{T('broadcast/states/'+current.state)}}</b>{%if stat%}
     
     Terkirim: <b>{{stat.sent}}</b> of <b>{{stat.total}}</b>
-    Error: <b>{{stat.errors}}</b>{%endif%}
+    Kesalahan: <b>{{stat.errors}}</b>{%endif%}
     {%else%}
     Tidak ada siaran aktif.
     
@@ -586,46 +586,46 @@ captcha:
     manage: |
       🥊 Captcha
     toggle: |
-      {%if not bot.captcha.enabled%}🎾 Enable{%else%}🏐 Disable{%endif%}
+      {%if not bot.captcha.enabled%}🎾 Diaktifkan{%else%}🏐 Dinonaktifkan{%endif%}
     reset: |
-      🔄 Reset users
+      🔄 Atur ulang pengguna
   text: |
-    🔹 Captcha settings for @{{bot.username}}
+    🔹 Pengaturan captcha untuk @{{bot.username}}
     
-    Current state: {%if bot.captcha.enabled%}🎾Включено{%else%}🏐️Выключено{%endif%}
+    Status saat ini: {%if bot.captcha.enabled%}🎾Diaktifkan{%else%}🏐️ Dinonaktifkan{%endif%}
     
-    ❓ Button "🔄 Reset users" will enable captcha for all existed users.
+    ❓ Tombol "🔄 Atur ulang pengguna" akan mengaktifkan captcha untuk semua pengguna yang ada.
   new: |
-    🔸 New captcha for @{{bot.username}}
+    🔸 Captcha baru untuk @{{bot.username}}
     {%if error%}
-    ⚠️ There was an error while creating the captcha probably due to invalid formatting.
+    ⚠️ Terjadi kesalahan saat membuat captcha yang mungkin disebabkan oleh format yang tidak valid.
 
-    <b>Error:</b> <code>{{error}}</code>
+    <b>Kesalahan:</b> <code>{{error}}</code>
     {%endif%}
-    ❓ The message must have question and the list of answers. Question and answers must be separated by <b>two</b> empty lines!
-    ❓ There must be at lest <b>two</b> answers. The first answer must be the correct one!
+    ❓ Pesan tersebut harus memiliki pertanyaan dan daftar jawaban. Pertanyaan dan jawaban harus dipisahkan oleh <b>dua</b> baris kosong!
+    ❓ Paling tidak harus ada <b>dua</b> jawaban. Jawaban pertama haruslah jawaban yang benar!
     
-    ❓ Example
+    ❓ Contoh
     
-    <code>Very difficult question?
+    <code>Pertanyaan yang sangat sulit?
     
     
-    Right answer
-    Wrong answer 1
-    Wrong answer 2
-    Wrong answer 3
-    Wrong answer 4</code>
+    Jawaban benar
+    Jawaban salah 1
+    Jawaban salah 2
+    Jawaban salah 3
+    Jawaban salah 4</code>
     
-    Or press /cancel to cancel.
+    Atau tekan /cancel untuk membatalkan.
   deleted: |
-    🔹 Captcha was deleted
+    🔹 Captcha telah dihapus.
   reset: |
-    🔹 All users was reset.
+    🔹 Semua pengguna telah diatur ulang.
   no_questions: |
-    ⚠️ You have to add at least one captcha!
+    ⚠️ Anda harus menambahkan setidaknya satu captcha!
   must: |
-    ⚠️ You have to pass captcha first by /start command.
+    ⚠️ Anda harus melewati captcha terlebih dahulu dengan perintah /start.
   failed: |
-    ⚠️ Wrong answer!
+    ⚠️ Jawaban salah!
   passed: |
-    😊 You have passed the captcha!
+    😊 Anda telah melewati captcha!
